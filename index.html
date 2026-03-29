@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Priya Sharma</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+    <meta property="og:title" content="Priya Sharma — Product Manager">
+    <meta property="og:description" content="Senior PM building B2B products where understanding the user translates into measurable business outcomes. Data integration, cloud infrastructure, workflow automation.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="headshot.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    fontFamily: {
+                        heading: ['Sora', 'system-ui', 'sans-serif'],
+                        body: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
+                    },
                     colors: {
                         purple: {
                             DEFAULT: '#7B2D8E',
@@ -29,24 +37,29 @@
         }
     </script>
     <style>
-        * { font-family: 'Inter', system-ui, sans-serif; }
+        body { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Sora', system-ui, sans-serif; }
         html { scroll-behavior: smooth; }
 
-        .case-study-number {
-            font-size: 8rem;
-            font-weight: 800;
-            line-height: 1;
+        .case-study-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
             color: #7B2D8E;
-            opacity: 0.06;
-            position: absolute;
-            top: -1.5rem;
-            right: 0;
-            user-select: none;
-            pointer-events: none;
+            letter-spacing: 0.05em;
+        }
+        .case-study-label::before {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 1.25rem;
+            background: #7B2D8E;
+            border-radius: 2px;
         }
 
         @media (max-width: 768px) {
-            .case-study-number { font-size: 5rem; top: -1rem; }
             .sidebar-nav { display: none; }
         }
 
@@ -70,10 +83,11 @@
     <!-- Sidebar Nav (desktop) -->
     <nav class="sidebar-nav fixed left-0 top-0 h-full w-48 border-r border-gray-200/60 bg-warm/80 backdrop-blur-sm z-50 flex flex-col justify-center pl-6 pr-4">
         <div class="space-y-5">
-            <a href="#top" class="block text-xs font-semibold text-purple uppercase tracking-wider">Priya Sharma</a>
+            <a href="#top" class="block text-xs font-semibold text-purple uppercase tracking-wider font-heading">Priya Sharma</a>
             <div class="w-6 h-px bg-purple/20"></div>
             <a href="#philosophy" class="block text-[13px] text-clay hover:text-purple transition-colors">Philosophy</a>
             <a href="#case-studies" class="block text-[13px] text-clay hover:text-purple transition-colors">Case Studies</a>
+            <a href="#frameworks" class="block text-[13px] text-clay hover:text-purple transition-colors">Frameworks</a>
             <a href="#approach" class="block text-[13px] text-clay hover:text-purple transition-colors">How I Work</a>
             <a href="#background" class="block text-[13px] text-clay hover:text-purple transition-colors">Background</a>
             <a href="#currently" class="block text-[13px] text-clay hover:text-purple transition-colors">Currently</a>
@@ -83,7 +97,7 @@
 
     <!-- Mobile Header -->
     <div class="md:hidden sticky top-0 z-40 bg-warm/90 backdrop-blur-sm border-b border-gray-200/60 px-5 py-3">
-        <span class="text-xs font-semibold text-purple uppercase tracking-wider">Priya Sharma</span>
+        <span class="text-xs font-semibold text-purple uppercase tracking-wider font-heading">Priya Sharma</span>
     </div>
 
     <!-- Main Content -->
@@ -95,11 +109,11 @@
                 <div class="flex items-start gap-5 mb-8">
                     <img src="headshot.png" alt="Priya Sharma" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-2 border-purple/15 flex-shrink-0">
                     <div class="pt-1">
-                        <h1 class="text-2xl sm:text-3xl font-bold text-ink leading-tight">Priya Sharma</h1>
+                        <h1 class="text-2xl sm:text-3xl font-bold text-ink leading-tight font-heading">Priya Sharma</h1>
                         <p class="text-sm text-clay mt-1">Senior Product Manager &middot; New York</p>
                     </div>
                 </div>
-                <p class="text-xl sm:text-2xl font-semibold text-ink leading-snug max-w-lg">
+                <p class="text-xl sm:text-2xl font-semibold text-ink leading-snug max-w-lg font-heading">
                     I build B2B products where understanding the user translates into
                     <span class="text-purple">measurable business outcomes.</span>
                 </p>
@@ -115,11 +129,11 @@
 
             <!-- Philosophy -->
             <section id="philosophy" class="py-12 sm:py-16">
-                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-6">Product Philosophy</p>
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-6 font-heading">Product Philosophy</p>
 
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-base font-semibold text-ink mb-2">Every feature is a bet. Treat it like one.</h3>
+                        <h3 class="text-base font-semibold text-ink mb-2 font-heading">Every feature is a bet. Treat it like one.</h3>
                         <p class="text-[15px] text-clay leading-relaxed">
                             Before anything gets built, I want to know: what's the hypothesis, how will we measure it,
                             and what would make us kill it? At Cloudpath, I killed a feature the CEO had highlighted
@@ -129,7 +143,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-base font-semibold text-ink mb-2">Customer discovery is not a phase. It's a practice.</h3>
+                        <h3 class="text-base font-semibold text-ink mb-2 font-heading">Customer discovery is not a phase. It's a practice.</h3>
                         <p class="text-[15px] text-clay leading-relaxed">
                             I've conducted 150+ structured customer interviews across three companies. Not "quick chats."
                             Structured programs with consistent guides, clear objectives, and synthesized outputs that
@@ -139,7 +153,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-base font-semibold text-ink mb-2">Frameworks should clarify, not constrain.</h3>
+                        <h3 class="text-base font-semibold text-ink mb-2 font-heading">Frameworks should clarify, not constrain.</h3>
                         <p class="text-[15px] text-clay leading-relaxed">
                             I use RICE, ICE, opportunity scoring, jobs-to-be-done -- whatever fits the decision.
                             But I don't worship any of them. The activation framework I defined at Cloudpath
@@ -154,13 +168,13 @@
 
             <!-- Case Studies -->
             <section id="case-studies" class="py-12 sm:py-16">
-                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-10">Selected Work</p>
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-10 font-heading">Selected Work</p>
 
                 <!-- Case Study 1 -->
                 <article class="mb-16 relative">
-                    <div class="case-study-number">01</div>
+                    <div class="case-study-label mb-3">Case Study 01</div>
                     <p class="text-xs font-medium text-purple/70 mb-2">Nexus Data &middot; 2023-Present</p>
-                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug">
+                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug font-heading">
                         Scaling a connector catalog without scaling the team
                     </h3>
 
@@ -247,9 +261,9 @@
 
                 <!-- Case Study 2 -->
                 <article class="mb-16 relative">
-                    <div class="case-study-number">02</div>
+                    <div class="case-study-label mb-3">Case Study 02</div>
                     <p class="text-xs font-medium text-purple/70 mb-2">Cloudpath &middot; 2021-2023</p>
-                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug">
+                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug font-heading">
                         Killing a feature the CEO loved
                     </h3>
 
@@ -334,9 +348,9 @@
 
                 <!-- Case Study 3 -->
                 <article class="relative">
-                    <div class="case-study-number">03</div>
+                    <div class="case-study-label mb-3">Case Study 03</div>
                     <p class="text-xs font-medium text-purple/70 mb-2">Cloudpath &middot; 2022</p>
-                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug">
+                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug font-heading">
                         Redesigning activation by defining it first
                     </h3>
 
@@ -419,13 +433,27 @@
 
             <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
 
+            <!-- Product Frameworks -->
+            <section id="frameworks" class="py-12 sm:py-16">
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-6 font-heading">Product Frameworks I Use</p>
+
+                <div class="space-y-4 text-[15px] text-clay leading-relaxed">
+                    <p><strong class="text-ink">On discovery:</strong> I don't trust any insight from fewer than 8 interviews. Below that, you're hearing anecdotes. Above that, patterns start repeating. I aim for 12-15 per research question, then stop.</p>
+                    <p><strong class="text-ink">On prioritization:</strong> I build the scoring model fresh each quarter because the criteria change. Reusing last quarter's RICE weights is a shortcut that leads to stale priorities. The conversation about what matters now is the point.</p>
+                    <p><strong class="text-ink">On experimentation:</strong> Pre-register everything -- hypothesis, success metric, guardrail metric, sample size. If you decide what "good" looks like after seeing results, you're not experimenting, you're storytelling.</p>
+                    <p><strong class="text-ink">On killing features:</strong> Sunk cost is the enemy. I've killed features I personally shipped and championed. The Commitment Advisor v1 kill was uncomfortable, but 8% adoption after three months doesn't lie.</p>
+                </div>
+            </section>
+
+            <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
+
             <!-- How I Work -->
             <section id="approach" class="py-12 sm:py-16">
-                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-8">How I Work</p>
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-8 font-heading">How I Work</p>
 
                 <div class="grid gap-6 sm:gap-5">
                     <div class="bg-white border border-gray-200/80 rounded-lg p-5">
-                        <p class="text-sm font-semibold text-ink mb-1.5">Discovery</p>
+                        <p class="text-sm font-semibold text-ink mb-1.5 font-heading">Discovery</p>
                         <p class="text-[14px] text-clay leading-relaxed">
                             Structured interview programs, not ad-hoc calls. Consistent guides. Affinity mapping in Miro.
                             Synthesized into themes that feed directly into prioritization. I've run 150+ of these across
@@ -434,7 +462,7 @@
                         </p>
                     </div>
                     <div class="bg-white border border-gray-200/80 rounded-lg p-5">
-                        <p class="text-sm font-semibold text-ink mb-1.5">Prioritization</p>
+                        <p class="text-sm font-semibold text-ink mb-1.5 font-heading">Prioritization</p>
                         <p class="text-[14px] text-clay leading-relaxed">
                             I build decision frameworks specific to the situation rather than applying RICE mechanically.
                             At Nexus Data, I faced three competing demands with capacity for 1.5. I scored each on revenue impact,
@@ -444,7 +472,7 @@
                         </p>
                     </div>
                     <div class="bg-white border border-gray-200/80 rounded-lg p-5">
-                        <p class="text-sm font-semibold text-ink mb-1.5">Experimentation</p>
+                        <p class="text-sm font-semibold text-ink mb-1.5 font-heading">Experimentation</p>
                         <p class="text-[14px] text-clay leading-relaxed">
                             15+ A/B tests designed and run. Sequential testing when the space is large.
                             Pre-registered hypotheses, guardrail metrics, minimum sample sizes. I'm as interested in
@@ -453,7 +481,7 @@
                         </p>
                     </div>
                     <div class="bg-white border border-gray-200/80 rounded-lg p-5">
-                        <p class="text-sm font-semibold text-ink mb-1.5">Technical Fluency</p>
+                        <p class="text-sm font-semibold text-ink mb-1.5 font-heading">Technical Fluency</p>
                         <p class="text-[14px] text-clay leading-relaxed">
                             I write SQL daily -- complex joins, window functions, CTEs across PostgreSQL, BigQuery,
                             and Snowflake. I understand REST APIs, webhooks, event-driven architecture, and CDC well enough
@@ -468,7 +496,7 @@
 
             <!-- Background -->
             <section id="background" class="py-12 sm:py-16">
-                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-8">Background</p>
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-8 font-heading">Background</p>
 
                 <div class="mb-8">
                     <p class="text-[15px] text-clay leading-relaxed">
@@ -487,7 +515,7 @@
                             <span class="text-xs font-medium text-purple/70">2023+</span>
                         </div>
                         <div>
-                            <p class="text-sm font-semibold text-ink">Senior PM, Nexus Data</p>
+                            <p class="text-sm font-semibold text-ink font-heading">Senior PM, Nexus Data</p>
                             <p class="text-[13px] text-clay">Series C data integration &middot; 220 people &middot; Connectors Platform</p>
                         </div>
                     </div>
@@ -496,7 +524,7 @@
                             <span class="text-xs font-medium text-purple/70">2021-23</span>
                         </div>
                         <div>
-                            <p class="text-sm font-semibold text-ink">PM, Cloudpath</p>
+                            <p class="text-sm font-semibold text-ink font-heading">PM, Cloudpath</p>
                             <p class="text-[13px] text-clay">Series B cloud cost optimization &middot; 130 people &middot; Recommendations Engine</p>
                         </div>
                     </div>
@@ -505,7 +533,7 @@
                             <span class="text-xs font-medium text-purple/70">2019-21</span>
                         </div>
                         <div>
-                            <p class="text-sm font-semibold text-ink">APM &rarr; PM, Uplink</p>
+                            <p class="text-sm font-semibold text-ink font-heading">APM &rarr; PM, Uplink</p>
                             <p class="text-[13px] text-clay">Seed-stage workflow automation &middot; 40 people &middot; Integrations</p>
                         </div>
                     </div>
@@ -514,7 +542,7 @@
                             <span class="text-xs font-medium text-purple/70">2019</span>
                         </div>
                         <div>
-                            <p class="text-sm font-semibold text-ink">Northwestern University</p>
+                            <p class="text-sm font-semibold text-ink font-heading">Northwestern University</p>
                             <p class="text-[13px] text-clay">B.S. Industrial Engineering, Minor in Computer Science</p>
                         </div>
                     </div>
@@ -525,29 +553,23 @@
 
             <!-- Currently -->
             <section id="currently" class="py-12 sm:py-16">
-                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-6">Currently</p>
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-6 font-heading">Currently</p>
 
                 <div class="space-y-5 text-[15px] text-clay leading-relaxed">
                     <div>
-                        <p class="text-sm font-semibold text-ink mb-1">Reading</p>
+                        <p class="text-sm font-semibold text-ink mb-1 font-heading">Reading</p>
                         <p>
-                            Running a PM book club with friends. Recent picks: <em>Inspired</em> by Marty Cagan,
-                            <em>Continuous Discovery Habits</em> by Teresa Torres, and <em>Working Backwards</em>.
-                            Currently on <em>The Lean Product Playbook</em> -- we argue about whether the
-                            problem-solution fit framework is too linear.
+                            Running a PM book club with friends. This month: <em>Working Backwards</em> by Colin Bryar. Last month's discussion on <em>Inspired</em> by Marty Cagan got heated when someone argued discovery sprints are cargo-culting. I disagree -- the problem isn't the sprint format, it's teams running them without clear hypotheses.
                         </p>
                     </div>
                     <div>
-                        <p class="text-sm font-semibold text-ink mb-1">Cooking</p>
+                        <p class="text-sm font-semibold text-ink mb-1 font-heading">Cooking</p>
                         <p>
-                            Reverse-engineering my grandmother's recipes. She never wrote anything down,
-                            so I've spent years learning her dal makhani by taste. It's become a metaphor
-                            for how I think about product work -- you can't just follow a recipe,
-                            you have to understand why each ingredient is there.
+                            Slowly reverse-engineering my grandmother's dal makhani. She never wrote anything down, so every batch is part memory, part experimentation.
                         </p>
                     </div>
                     <div>
-                        <p class="text-sm font-semibold text-ink mb-1">Thinking about</p>
+                        <p class="text-sm font-semibold text-ink mb-1 font-heading">Thinking about</p>
                         <p>
                             How developer platforms create leverage without losing quality control.
                             The SDK work at Nexus Data taught me that the hardest part isn't building the
@@ -562,7 +584,7 @@
 
             <!-- Contact -->
             <section id="contact" class="py-12 sm:py-16">
-                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-4">Get in Touch</p>
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-4 font-heading">Get in Touch</p>
                 <p class="text-[15px] text-clay mb-4 leading-relaxed">
                     I'm exploring product roles in B2B SaaS, data infrastructure, developer tools, and AI.
                     Open to remote, hybrid in NYC, or relocating to SF or Seattle for the right opportunity.
