@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priya Sharma — Senior Product Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: { accent: '#7B2D8E' }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="border-b border-gray-100">
+        <div class="max-w-3xl mx-auto px-6 py-14 sm:py-18">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <img src="headshot.png" alt="Priya Sharma" class="w-28 h-28 sm:w-[120px] sm:h-[120px] rounded-full object-cover border-[3px] border-[#7B2D8E]/10 flex-shrink-0">
+                <div class="text-center sm:text-left">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Priya Sharma</h1>
+                    <p class="mt-2 text-lg text-accent font-medium">Senior Product Manager</p>
+                    <p class="mt-1 text-sm text-gray-400">New York, NY</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6">
+
+        <!-- About -->
+        <section class="py-12 sm:py-16">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">About</h2>
+            <p class="text-gray-600 leading-relaxed text-[15px]">
+                Product manager with 5 years of experience building and scaling B2B SaaS products across data integration, cloud infrastructure, and workflow automation. I focus on the intersection of customer discovery and business impact -- identifying what users actually need, structuring the problem, and shipping solutions that move revenue metrics. Equally comfortable running pricing experiments and writing SQL to validate hypotheses.
+            </p>
+        </section>
+
+        <hr class="border-gray-100">
+
+        <!-- Experience -->
+        <section class="py-12 sm:py-16">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-8">Experience</h2>
+
+            <div class="mb-10">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                    <h3 class="text-lg font-semibold text-gray-900">Senior Product Manager</h3>
+                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">2023 -- Present</span>
+                </div>
+                <p class="text-sm text-accent font-medium mb-3">Nexus Data &middot; Series C &middot; 220 employees</p>
+                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
+                    <li>Own the Connectors Platform product area (50+ connectors, 3 engineers, 1 designer), responsible for the surface that generates 35% of platform ARR.</li>
+                    <li>Launched the Connector SDK and partner program, enabling 14 third-party connectors in 6 months. Partner-built connectors influenced $1.2M in pipeline in the first two quarters.</li>
+                    <li>Redesigned the connector configuration UX based on 23 customer interviews and session replay analysis, reducing median setup time from 18 minutes to 6 minutes.</li>
+                    <li>Led pricing restructuring for the connector tier, introducing usage-based pricing for premium connectors. Increased connector-tier ARPU by 28% with no measurable churn impact.</li>
+                    <li>Shipped real-time CDC connectors for PostgreSQL and MySQL, closing a competitive gap cited in 11 lost deals. Adopted by 38% of enterprise accounts within 3 months.</li>
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                    <h3 class="text-lg font-semibold text-gray-900">Product Manager</h3>
+                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">2021 -- 2023</span>
+                </div>
+                <p class="text-sm text-accent font-medium mb-3">Cloudpath &middot; Series B &middot; 130 employees</p>
+                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
+                    <li>Shipped the Anomaly Detection feature end-to-end, which became the #2 most-cited reason for purchase. Influenced $2.1M in new ARR within the first year.</li>
+                    <li>Improved 7-day activation rate from 34% to 51% by redesigning onboarding to surface a personalized savings estimate within 3 minutes. Ran 4 sequential A/B tests over 8 weeks.</li>
+                    <li>Reduced false-positive rate in rightsizing recommendations from 23% to 9% by introducing a confidence scoring framework with the data science team.</li>
+                    <li>Killed Commitment Advisor v1 after data showed 8% adoption. Redirected to automated commitment purchasing, which reached 31% adoption in one quarter.</li>
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                    <h3 class="text-lg font-semibold text-gray-900">Associate PM / Product Manager</h3>
+                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">2019 -- 2021</span>
+                </div>
+                <p class="text-sm text-accent font-medium mb-3">Uplink &middot; Seed Stage &middot; 40 employees</p>
+                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
+                    <li>Grew the integration catalog from 12 to 20 connectors in 12 months, directly unblocking 6 enterprise deals worth $380K ARR.</li>
+                    <li>Designed the Integration Framework, reducing average connector development time from 3 weeks to 8 days.</li>
+                    <li>Led the first structured customer discovery program at Uplink (35 interviews), surfacing the conditional logic gap. Feature shipped in Q1 2021 and became the most-used advanced feature within 2 months.</li>
+                    <li>Reduced integration-related support tickets by 34% through in-app setup guides with contextual troubleshooting.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-gray-100">
+
+        <!-- Skills -->
+        <section class="py-12 sm:py-16">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-6">Skills</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Product Strategy</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Customer Discovery</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">A/B Testing</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Pricing & Packaging</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Roadmap Prioritization</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">SQL & Data Analysis</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Developer Experience</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Cross-Functional Leadership</span>
+                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">User Research</span>
+            </div>
+        </section>
+
+        <hr class="border-gray-100">
+
+        <!-- Education -->
+        <section class="py-12 sm:py-16">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Education</h2>
+            <div>
+                <h3 class="font-semibold text-gray-900">Northwestern University</h3>
+                <p class="text-sm text-gray-500 mt-0.5">B.S. Industrial Engineering, Minor in Computer Science &middot; 2019</p>
+            </div>
+        </section>
+
+        <hr class="border-gray-100">
+
+        <!-- Contact -->
+        <section class="py-12 sm:py-16">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Contact</h2>
+            <div class="space-y-2 text-[15px]">
+                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Email</span> <a href="mailto:priya@priyasharma.me" class="text-accent hover:underline">priya@priyasharma.me</a></p>
+                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Based in</span> New York, NY</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center text-xs text-gray-300">
+            &copy; 2026 Priya Sharma
+        </div>
+    </footer>
+
+</body>
+</html>
