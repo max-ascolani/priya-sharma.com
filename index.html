@@ -3,148 +3,583 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priya Sharma — Senior Product Manager</title>
+    <title>Priya Sharma</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                    colors: { accent: '#7B2D8E' }
+                    colors: {
+                        purple: {
+                            DEFAULT: '#7B2D8E',
+                            light: '#F3E8F7',
+                            muted: '#9B5FAD',
+                            deep: '#5A1E6A',
+                        },
+                        ink: '#1a1118',
+                        warm: '#FAFAF8',
+                        clay: '#6B5E6E',
+                    }
                 }
             }
         }
     </script>
     <style>
         * { font-family: 'Inter', system-ui, sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        .case-study-number {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #7B2D8E;
+            opacity: 0.06;
+            position: absolute;
+            top: -1.5rem;
+            right: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-number { font-size: 5rem; top: -1rem; }
+            .sidebar-nav { display: none; }
+        }
+
+        .phase-marker {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #7B2D8E;
+            flex-shrink: 0;
+        }
+
+        .phase-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #7B2D8E, #7B2D8E20);
+            flex-shrink: 0;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased">
+<body class="bg-warm text-ink antialiased">
 
-    <!-- Header -->
-    <header class="border-b border-gray-100">
-        <div class="max-w-3xl mx-auto px-6 py-14 sm:py-18">
-            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                <img src="headshot.png" alt="Priya Sharma" class="w-28 h-28 sm:w-[120px] sm:h-[120px] rounded-full object-cover border-[3px] border-[#7B2D8E]/10 flex-shrink-0">
-                <div class="text-center sm:text-left">
-                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Priya Sharma</h1>
-                    <p class="mt-2 text-lg text-accent font-medium">Senior Product Manager</p>
-                    <p class="mt-1 text-sm text-gray-400">New York, NY</p>
-                </div>
-            </div>
+    <!-- Sidebar Nav (desktop) -->
+    <nav class="sidebar-nav fixed left-0 top-0 h-full w-48 border-r border-gray-200/60 bg-warm/80 backdrop-blur-sm z-50 flex flex-col justify-center pl-6 pr-4">
+        <div class="space-y-5">
+            <a href="#top" class="block text-xs font-semibold text-purple uppercase tracking-wider">Priya Sharma</a>
+            <div class="w-6 h-px bg-purple/20"></div>
+            <a href="#philosophy" class="block text-[13px] text-clay hover:text-purple transition-colors">Philosophy</a>
+            <a href="#case-studies" class="block text-[13px] text-clay hover:text-purple transition-colors">Case Studies</a>
+            <a href="#approach" class="block text-[13px] text-clay hover:text-purple transition-colors">How I Work</a>
+            <a href="#background" class="block text-[13px] text-clay hover:text-purple transition-colors">Background</a>
+            <a href="#currently" class="block text-[13px] text-clay hover:text-purple transition-colors">Currently</a>
+            <a href="#contact" class="block text-[13px] text-clay hover:text-purple transition-colors">Get in Touch</a>
         </div>
-    </header>
+    </nav>
 
-    <main class="max-w-3xl mx-auto px-6">
+    <!-- Mobile Header -->
+    <div class="md:hidden sticky top-0 z-40 bg-warm/90 backdrop-blur-sm border-b border-gray-200/60 px-5 py-3">
+        <span class="text-xs font-semibold text-purple uppercase tracking-wider">Priya Sharma</span>
+    </div>
 
-        <!-- About -->
-        <section class="py-12 sm:py-16">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">About</h2>
-            <p class="text-gray-600 leading-relaxed text-[15px]">
-                Product manager with 5 years of experience building and scaling B2B SaaS products across data integration, cloud infrastructure, and workflow automation. I focus on the intersection of customer discovery and business impact -- identifying what users actually need, structuring the problem, and shipping solutions that move revenue metrics. Equally comfortable running pricing experiments and writing SQL to validate hypotheses.
-            </p>
-        </section>
+    <!-- Main Content -->
+    <div class="md:ml-48">
+        <main class="max-w-2xl mx-auto px-5 sm:px-8">
 
-        <hr class="border-gray-100">
-
-        <!-- Experience -->
-        <section class="py-12 sm:py-16">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-8">Experience</h2>
-
-            <div class="mb-10">
-                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                    <h3 class="text-lg font-semibold text-gray-900">Senior Product Manager</h3>
-                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">2023 -- Present</span>
+            <!-- Hero -->
+            <section id="top" class="pt-16 sm:pt-24 pb-12 sm:pb-16">
+                <div class="flex items-start gap-5 mb-8">
+                    <img src="headshot.png" alt="Priya Sharma" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-2 border-purple/15 flex-shrink-0">
+                    <div class="pt-1">
+                        <h1 class="text-2xl sm:text-3xl font-bold text-ink leading-tight">Priya Sharma</h1>
+                        <p class="text-sm text-clay mt-1">Senior Product Manager &middot; New York</p>
+                    </div>
                 </div>
-                <p class="text-sm text-accent font-medium mb-3">Nexus Data &middot; Series C &middot; 220 employees</p>
-                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
-                    <li>Own the Connectors Platform product area (50+ connectors, 3 engineers, 1 designer), responsible for the surface that generates 35% of platform ARR.</li>
-                    <li>Launched the Connector SDK and partner program, enabling 14 third-party connectors in 6 months. Partner-built connectors influenced $1.2M in pipeline in the first two quarters.</li>
-                    <li>Redesigned the connector configuration UX based on 23 customer interviews and session replay analysis, reducing median setup time from 18 minutes to 6 minutes.</li>
-                    <li>Led pricing restructuring for the connector tier, introducing usage-based pricing for premium connectors. Increased connector-tier ARPU by 28% with no measurable churn impact.</li>
-                    <li>Shipped real-time CDC connectors for PostgreSQL and MySQL, closing a competitive gap cited in 11 lost deals. Adopted by 38% of enterprise accounts within 3 months.</li>
-                </ul>
-            </div>
+                <p class="text-xl sm:text-2xl font-semibold text-ink leading-snug max-w-lg">
+                    I build B2B products where understanding the user translates into
+                    <span class="text-purple">measurable business outcomes.</span>
+                </p>
+                <p class="mt-4 text-[15px] text-clay leading-relaxed max-w-lg">
+                    Five years across data integration, cloud infrastructure, and workflow automation.
+                    I've launched platform SDKs, restructured pricing models, killed features that weren't working,
+                    and run 150+ customer discovery interviews. Every product decision is a hypothesis.
+                    My job is to structure the experiment and make the call.
+                </p>
+            </section>
 
-            <div class="mb-10">
-                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                    <h3 class="text-lg font-semibold text-gray-900">Product Manager</h3>
-                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">2021 -- 2023</span>
+            <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
+
+            <!-- Philosophy -->
+            <section id="philosophy" class="py-12 sm:py-16">
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-6">Product Philosophy</p>
+
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-base font-semibold text-ink mb-2">Every feature is a bet. Treat it like one.</h3>
+                        <p class="text-[15px] text-clay leading-relaxed">
+                            Before anything gets built, I want to know: what's the hypothesis, how will we measure it,
+                            and what would make us kill it? At Cloudpath, I killed a feature the CEO had highlighted
+                            at a board meeting because the data showed 8% adoption. We redirected the team to automated
+                            commitment purchasing -- it hit 31% adoption in one quarter.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-semibold text-ink mb-2">Customer discovery is not a phase. It's a practice.</h3>
+                        <p class="text-[15px] text-clay leading-relaxed">
+                            I've conducted 150+ structured customer interviews across three companies. Not "quick chats."
+                            Structured programs with consistent guides, clear objectives, and synthesized outputs that
+                            actually change the roadmap. At my first PM job, there was no discovery practice at all.
+                            I built one from scratch. The interview template I created was still in use two years after I left.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-semibold text-ink mb-2">Frameworks should clarify, not constrain.</h3>
+                        <p class="text-[15px] text-clay leading-relaxed">
+                            I use RICE, ICE, opportunity scoring, jobs-to-be-done -- whatever fits the decision.
+                            But I don't worship any of them. The activation framework I defined at Cloudpath
+                            (Connected, Value Seen, Value Realized) became the primary lens for all product decisions.
+                            Not because it was clever, but because it mapped to how users actually experienced the product.
+                        </p>
+                    </div>
                 </div>
-                <p class="text-sm text-accent font-medium mb-3">Cloudpath &middot; Series B &middot; 130 employees</p>
-                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
-                    <li>Shipped the Anomaly Detection feature end-to-end, which became the #2 most-cited reason for purchase. Influenced $2.1M in new ARR within the first year.</li>
-                    <li>Improved 7-day activation rate from 34% to 51% by redesigning onboarding to surface a personalized savings estimate within 3 minutes. Ran 4 sequential A/B tests over 8 weeks.</li>
-                    <li>Reduced false-positive rate in rightsizing recommendations from 23% to 9% by introducing a confidence scoring framework with the data science team.</li>
-                    <li>Killed Commitment Advisor v1 after data showed 8% adoption. Redirected to automated commitment purchasing, which reached 31% adoption in one quarter.</li>
-                </ul>
-            </div>
+            </section>
 
-            <div class="mb-10">
-                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                    <h3 class="text-lg font-semibold text-gray-900">Associate PM / Product Manager</h3>
-                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">2019 -- 2021</span>
+            <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
+
+            <!-- Case Studies -->
+            <section id="case-studies" class="py-12 sm:py-16">
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-10">Selected Work</p>
+
+                <!-- Case Study 1 -->
+                <article class="mb-16 relative">
+                    <div class="case-study-number">01</div>
+                    <p class="text-xs font-medium text-purple/70 mb-2">Nexus Data &middot; 2023-Present</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug">
+                        Scaling a connector catalog without scaling the team
+                    </h3>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-2">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Problem</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                50+ connectors in the catalog, but a 6-month development backlog. Enterprise customers
+                                kept requesting niche integrations -- industry-specific ERPs, regional payment processors --
+                                that couldn't justify internal development time. Three competitors had launched partner
+                                ecosystems. We were falling behind.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">What I Discovered</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                I interviewed 8 integration partners and 6 enterprise customers. Two key insights:
+                                partners wanted a typed SDK with clear abstractions, not raw API docs. And customers
+                                with internal platform teams were willing to build connectors themselves -- if they could
+                                own and maintain them privately. The path wasn't "build more connectors." It was
+                                "build the tools that let others build connectors."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">What I Shipped</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                A 12-page product spec covering SDK architecture, partner onboarding, quality certification,
+                                and revenue sharing. I scoped the SDK to a 10-week build while handling documentation,
+                                partner outreach, and certification criteria in parallel. We launched a private beta
+                                with 5 partners, iterated through 3 breaking changes in the first month based on their
+                                feedback, then opened the program publicly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Outcome</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                14 third-party connectors published in 6 months. $1.2M in influenced pipeline in the
+                                first two quarters. Internal connector backlog shrank by 40%. The SDK became a sales
+                                differentiator -- our team started demoing the partner marketplace in enterprise deals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Key numbers strip -->
+                    <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                        <div>
+                            <span class="text-lg font-bold text-purple">14</span>
+                            <span class="text-xs text-clay ml-1">partner connectors</span>
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold text-purple">$1.2M</span>
+                            <span class="text-xs text-clay ml-1">influenced pipeline</span>
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold text-purple">40%</span>
+                            <span class="text-xs text-clay ml-1">backlog reduced</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case Study 2 -->
+                <article class="mb-16 relative">
+                    <div class="case-study-number">02</div>
+                    <p class="text-xs font-medium text-purple/70 mb-2">Cloudpath &middot; 2021-2023</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug">
+                        Killing a feature the CEO loved
+                    </h3>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-2">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Problem</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                I'd shipped Commitment Advisor v1 -- a feature that recommended optimal reserved instance
+                                purchases based on cloud usage patterns. Six weeks of a 4-person team. The CEO had
+                                personally highlighted it at a board meeting. Three months later: 8% of users who saw
+                                recommendations acted on them. Engagement was declining week over week.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">What I Discovered</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                Cohort analysis showed no measurable difference in retention between users who engaged
+                                with the feature and those who didn't. Then I interviewed 12 users who saw recommendations
+                                but didn't act. The core issue was trust: committing $50K-$500K in cloud spend based on
+                                an algorithm they couldn't fully audit felt too risky. They didn't want recommendations.
+                                They wanted the platform to just do it -- with guardrails.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Hard Call</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                I presented three options to the CEO and CTO: iterate on v1 with transparency features,
+                                pivot to automated purchasing with approval workflows, or deprecate entirely. I recommended
+                                the pivot, backed by interview data and competitive analysis. The CEO had publicly championed
+                                v1, so this was not a comfortable conversation. But the data was unambiguous.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Outcome</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                We deprecated v1. Automated commitment purchasing with configurable guardrails
+                                reached 31% adoption in its first quarter -- nearly 4x what v1 ever achieved.
+                                It became a key enterprise differentiator because competitors lacked guardrail flexibility.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                        <div>
+                            <span class="text-lg font-bold text-purple">8%</span>
+                            <span class="text-xs text-clay ml-1">v1 adoption (killed)</span>
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold text-purple">31%</span>
+                            <span class="text-xs text-clay ml-1">v2 adoption (shipped)</span>
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold text-purple">12</span>
+                            <span class="text-xs text-clay ml-1">user interviews</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case Study 3 -->
+                <article class="relative">
+                    <div class="case-study-number">03</div>
+                    <p class="text-xs font-medium text-purple/70 mb-2">Cloudpath &middot; 2022</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-ink mb-4 leading-snug">
+                        Redesigning activation by defining it first
+                    </h3>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-2">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Problem</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                Cloudpath tracked "signed up" and "paid" as the two lifecycle milestones. Nothing in between.
+                                When the CEO asked why signups weren't converting, nobody had a precise answer because
+                                nobody had defined what "activated" actually meant.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Framework</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                I analyzed the highest-retention cohort against the highest-churn cohort. The behavioral
+                                sequence that predicted retention was clear: connect a cloud account, see $1,000+ in
+                                savings, act on a recommendation. Users who completed all three within 7 days retained at 82%.
+                                Users who didn't: 31%. I defined three activation stages -- Connected, Value Seen,
+                                Value Realized -- each with a behavioral definition, target conversion rate, and owner.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                            <div class="phase-line flex-1 my-1"></div>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Experiments</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                I ran 4 sequential A/B tests over 8 weeks, each building on the previous winner.
+                                Quick savings estimate within 60 seconds of connecting. Placement testing.
+                                "Top 3 recommendations" preview. Email notification timing. Each experiment ran for
+                                2 weeks with a minimum sample of 150 users per variant. Every experiment was
+                                pre-registered with hypotheses, success metrics, and guardrail metrics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="phase-marker"></div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-ink/50 mb-1">The Outcome</p>
+                            <p class="text-[15px] text-clay leading-relaxed">
+                                7-day activation rate went from 34% to 51%. Time-to-value dropped from 6.2 hours to
+                                2.8 minutes. The activation framework became the primary decision-making lens for
+                                the entire product team. Marketing adopted it to segment email nurture campaigns.
+                                The experiment series became the template for how the team ran experiments going forward.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                        <div>
+                            <span class="text-lg font-bold text-purple">34% &rarr; 51%</span>
+                            <span class="text-xs text-clay ml-1">activation rate</span>
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold text-purple">6.2hr &rarr; 2.8min</span>
+                            <span class="text-xs text-clay ml-1">time to value</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
+
+            <!-- How I Work -->
+            <section id="approach" class="py-12 sm:py-16">
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-8">How I Work</p>
+
+                <div class="grid gap-6 sm:gap-5">
+                    <div class="bg-white border border-gray-200/80 rounded-lg p-5">
+                        <p class="text-sm font-semibold text-ink mb-1.5">Discovery</p>
+                        <p class="text-[14px] text-clay leading-relaxed">
+                            Structured interview programs, not ad-hoc calls. Consistent guides. Affinity mapping in Miro.
+                            Synthesized into themes that feed directly into prioritization. I've run 150+ of these across
+                            three companies. At Uplink, I built the practice from nothing -- 35 interviews that surfaced
+                            the product gap responsible for most competitive losses.
+                        </p>
+                    </div>
+                    <div class="bg-white border border-gray-200/80 rounded-lg p-5">
+                        <p class="text-sm font-semibold text-ink mb-1.5">Prioritization</p>
+                        <p class="text-[14px] text-clay leading-relaxed">
+                            I build decision frameworks specific to the situation rather than applying RICE mechanically.
+                            At Nexus Data, I faced three competing demands with capacity for 1.5. I scored each on revenue impact,
+                            retention risk, engineering leverage, and strategic alignment -- then proposed a hybrid that satisfied
+                            all three stakeholders. The key is making the criteria explicit so the conversation is about
+                            the inputs, not the conclusion.
+                        </p>
+                    </div>
+                    <div class="bg-white border border-gray-200/80 rounded-lg p-5">
+                        <p class="text-sm font-semibold text-ink mb-1.5">Experimentation</p>
+                        <p class="text-[14px] text-clay leading-relaxed">
+                            15+ A/B tests designed and run. Sequential testing when the space is large.
+                            Pre-registered hypotheses, guardrail metrics, minimum sample sizes. I'm as interested in
+                            the experiments that disprove the hypothesis as the ones that confirm it. Killing Commitment
+                            Advisor v1 was one of my best product decisions.
+                        </p>
+                    </div>
+                    <div class="bg-white border border-gray-200/80 rounded-lg p-5">
+                        <p class="text-sm font-semibold text-ink mb-1.5">Technical Fluency</p>
+                        <p class="text-[14px] text-clay leading-relaxed">
+                            I write SQL daily -- complex joins, window functions, CTEs across PostgreSQL, BigQuery,
+                            and Snowflake. I understand REST APIs, webhooks, event-driven architecture, and CDC well enough
+                            to spec them, review technical designs, and debug retention drops alongside the lead engineer.
+                            I'm not an engineer, but I speak the language fluently enough to collaborate deeply.
+                        </p>
+                    </div>
                 </div>
-                <p class="text-sm text-accent font-medium mb-3">Uplink &middot; Seed Stage &middot; 40 employees</p>
-                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
-                    <li>Grew the integration catalog from 12 to 20 connectors in 12 months, directly unblocking 6 enterprise deals worth $380K ARR.</li>
-                    <li>Designed the Integration Framework, reducing average connector development time from 3 weeks to 8 days.</li>
-                    <li>Led the first structured customer discovery program at Uplink (35 interviews), surfacing the conditional logic gap. Feature shipped in Q1 2021 and became the most-used advanced feature within 2 months.</li>
-                    <li>Reduced integration-related support tickets by 34% through in-app setup guides with contextual troubleshooting.</li>
-                </ul>
+            </section>
+
+            <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
+
+            <!-- Background -->
+            <section id="background" class="py-12 sm:py-16">
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-8">Background</p>
+
+                <div class="mb-8">
+                    <p class="text-[15px] text-clay leading-relaxed">
+                        I studied Industrial Engineering at Northwestern with a minor in CS --
+                        systems optimization, statistical methods, human-computer interaction.
+                        My capstone project was a scheduling tool for outpatient clinics that reduced
+                        simulated wait times by 14 minutes. I was VP of Projects for the Product Design Club
+                        and mentored through Women in STEM.
+                    </p>
+                </div>
+
+                <!-- Career Timeline - compact -->
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-16 flex-shrink-0 text-right">
+                            <span class="text-xs font-medium text-purple/70">2023+</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-ink">Senior PM, Nexus Data</p>
+                            <p class="text-[13px] text-clay">Series C data integration &middot; 220 people &middot; Connectors Platform</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-16 flex-shrink-0 text-right">
+                            <span class="text-xs font-medium text-purple/70">2021-23</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-ink">PM, Cloudpath</p>
+                            <p class="text-[13px] text-clay">Series B cloud cost optimization &middot; 130 people &middot; Recommendations Engine</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-16 flex-shrink-0 text-right">
+                            <span class="text-xs font-medium text-purple/70">2019-21</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-ink">APM &rarr; PM, Uplink</p>
+                            <p class="text-[13px] text-clay">Seed-stage workflow automation &middot; 40 people &middot; Integrations</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-16 flex-shrink-0 text-right">
+                            <span class="text-xs font-medium text-purple/70">2019</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-ink">Northwestern University</p>
+                            <p class="text-[13px] text-clay">B.S. Industrial Engineering, Minor in Computer Science</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
+
+            <!-- Currently -->
+            <section id="currently" class="py-12 sm:py-16">
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-6">Currently</p>
+
+                <div class="space-y-5 text-[15px] text-clay leading-relaxed">
+                    <div>
+                        <p class="text-sm font-semibold text-ink mb-1">Reading</p>
+                        <p>
+                            Running a PM book club with friends. Recent picks: <em>Inspired</em> by Marty Cagan,
+                            <em>Continuous Discovery Habits</em> by Teresa Torres, and <em>Working Backwards</em>.
+                            Currently on <em>The Lean Product Playbook</em> -- we argue about whether the
+                            problem-solution fit framework is too linear.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-ink mb-1">Cooking</p>
+                        <p>
+                            Reverse-engineering my grandmother's recipes. She never wrote anything down,
+                            so I've spent years learning her dal makhani by taste. It's become a metaphor
+                            for how I think about product work -- you can't just follow a recipe,
+                            you have to understand why each ingredient is there.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-ink mb-1">Thinking about</p>
+                        <p>
+                            How developer platforms create leverage without losing quality control.
+                            The SDK work at Nexus Data taught me that the hardest part isn't building the
+                            platform -- it's building the developer experience around it.
+                            I'm interested in how the best platform companies solve this.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px bg-gradient-to-r from-purple/15 via-purple/8 to-transparent"></div>
+
+            <!-- Contact -->
+            <section id="contact" class="py-12 sm:py-16">
+                <p class="text-xs font-semibold uppercase tracking-widest text-purple mb-4">Get in Touch</p>
+                <p class="text-[15px] text-clay mb-4 leading-relaxed">
+                    I'm exploring product roles in B2B SaaS, data infrastructure, developer tools, and AI.
+                    Open to remote, hybrid in NYC, or relocating to SF or Seattle for the right opportunity.
+                </p>
+                <a href="mailto:hello@priya-sharma.com" class="inline-block text-[15px] text-purple font-medium hover:underline">
+                    hello@priya-sharma.com
+                </a>
+            </section>
+
+        </main>
+
+        <footer class="border-t border-gray-200/50 mt-8">
+            <div class="max-w-2xl mx-auto px-5 sm:px-8 py-8 text-xs text-clay/50">
+                &copy; 2026 Priya Sharma
             </div>
-        </section>
-
-        <hr class="border-gray-100">
-
-        <!-- Skills -->
-        <section class="py-12 sm:py-16">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-6">Skills</h2>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Product Strategy</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Customer Discovery</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">A/B Testing</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Pricing & Packaging</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Roadmap Prioritization</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">SQL & Data Analysis</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Developer Experience</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">Cross-Functional Leadership</span>
-                <span class="px-3 py-1.5 bg-[#7B2D8E]/5 text-gray-700 text-sm rounded-full border border-[#7B2D8E]/10">User Research</span>
-            </div>
-        </section>
-
-        <hr class="border-gray-100">
-
-        <!-- Education -->
-        <section class="py-12 sm:py-16">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Education</h2>
-            <div>
-                <h3 class="font-semibold text-gray-900">Northwestern University</h3>
-                <p class="text-sm text-gray-500 mt-0.5">B.S. Industrial Engineering, Minor in Computer Science &middot; 2019</p>
-            </div>
-        </section>
-
-        <hr class="border-gray-100">
-
-        <!-- Contact -->
-        <section class="py-12 sm:py-16">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Contact</h2>
-            <div class="space-y-2 text-[15px]">
-                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Email</span> <a href="mailto:priya@priyasharma.me" class="text-accent hover:underline">priya@priyasharma.me</a></p>
-                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Based in</span> New York, NY</p>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="border-t border-gray-100">
-        <div class="max-w-3xl mx-auto px-6 py-8 text-center text-xs text-gray-300">
-            &copy; 2026 Priya Sharma
-        </div>
-    </footer>
+        </footer>
+    </div>
 
 </body>
 </html>
